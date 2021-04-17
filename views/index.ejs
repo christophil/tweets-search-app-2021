@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Twitter Search App</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+
+
+	<div class="container-contact100">
+
+		<div class="wrap-contact100">
+			<form id="ml_form" class="contact100-form validate-form" action="/tweets">
+				<span class="contact100-form-title">
+					Twitter Search App
+				</span>
+
+			
+				<p style="text-align: center; margin-bottom: 30px;">Enter a text and we will find the best 20 tweet related to your text.</p>
+
+				<div class="wrap-input100 validate-input" data-validate = "Please enter your text">
+					<textarea class="input100" name="message" placeholder="Your Text"></textarea>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="container-contact100-form-btn" style="padding-left: 15%;">
+					<button class="contact100-form-btn">
+						<span>
+							<i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
+							Send
+						</span>
+					</button>
+					<div style="visibility: hidden" id="custom_loader" class="lds-dual-ring"></div>
+				</div>
+			</form>
+
+            <% if(locals.result && result != "error"){%>
+
+			<div>
+
+				<span class="contact100-form-title">
+					Related tweets
+				</span>
+
+				<p> <%= result %> </p>
+
+				</div>
+
+			<% } %>
+		</div>
+	</div>
+
+</body>
+</html>

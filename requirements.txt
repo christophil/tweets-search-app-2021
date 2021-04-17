@@ -1,0 +1,6 @@
+pandas
+numpy
+Cython
+gensim
+smart-open
+sklearn
